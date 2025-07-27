@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AgencEco</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
     <nav>
       <!-- Barre de navigation avec log -->
       <img src="assets/logo.png" alt="AgencEco" />
-      <ul>
+      <ul id="nav-links">
         <li><a href="#">Accueil</a></li>
         <li><a href="#">Notre équipe</a></li>
         <li><a href="#">Nos services</a></li>
@@ -21,49 +25,55 @@
     <header>
       <!-- Banière d'accueil avec le message de bienvenue -->
       <div>
-        <img
+        <!-- <img
           src="assets/rodion-kutsaev-049M_crau5k-unsplash 1.jpg"
           alt="Bienvenue dans votre Agence Web écologique"
-        />
+        /> -->
       </div>
       <div>
         <h1>Bienvenue dans votre</h1>
       </div>
       <div>
-        <h1>agence web écologique</h1>
+        <h2>agence web écologique</h2>
       </div>
     </header>
-    <section>
+    <section id="equipe">
       <!-- Section notre équipe -->
       <div>
         <h2>Notre équipe</h2>
-        <p>
+        <h3 >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo
           aperiam alias, voluptatibus velit ducimus assumenda voluptate tempora
           expedita modi quaerat a cumque. Necessitatibus recusandae a tempora,
           pariatur rem repudiandae.
-        </p>
+        </h3>
       </div>
-      <div>
+      <div class="portraits">
         <div>
+          <div class="container-photo">
           <img src="assets/image 1.jpg" alt="Julie Dupond" />
-          <h3>Julie Dupond</h3>
+          </div>
+          <h4>Julie Dupond</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
             eligendi fugiat incidunt explicabo.
           </p>
         </div>
-        <div>
+        <div >
+          <div class="container-photo">
           <img src="assets/image 2.jpg" alt="Romeo Sylla" />
-          <h3>Romeo Sylla</h3>
+          </div>
+          <h4>Romeo Sylla</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
             eligendi fugiat incidunt explicabo.
           </p>
         </div>
-        <div>
+        <div >
+          <div class="container-photo">
           <img src="assets/image 3.jpg" alt="Javier Bardem" />
-          <h3>Javier Bardem</h3>
+          </div>
+          <h4>Javier Bardem</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
             eligendi fugiat incidunt explicabo.
@@ -71,7 +81,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section  class="client">
       <!-- Section Clients -->
       <div>
         <h3>2500</h3>
@@ -90,18 +100,22 @@
         <p>Clients satisfaits</p>
       </div>
     </section>
-    <section>
+    <section id="services">
       <!-- Section nos services -->
       <div>
         <h2>Nos services</h2>
       </div>
-      <div>
-        <div>
+      <div class="portraits">
+        <div class="container-photo">
+          <div>
           <img src="assets/Vector.jpg" alt="Création de sites web" />
+          </div>
           <h3>Création de sites web</h3>
         </div>
-        <div>
-          <img src="assets/Vector-1.jpg" alt="Audit qualité" />
+        <div class="container-photo">
+          <div>
+          <img src="assets/vector-1.png" alt="Audit qualité" />
+          </div>
           <h3>Audit qualité</h3>
         </div>
       </div>
@@ -112,61 +126,63 @@
         <h2>Dernières actualités</h2>
       </div>
       <div>
-        <div>
-          <h3>le titre de mon actualité</h3>
+        <div class="actu">
+          <h3>Le titre de mon actualité</h3>
           <p>05/04/2023</p>
           <p>La description de l'actualité</p>
           <p>Le contenu de l'actualité</p>
         </div>
-        <div>
-          <h3>le titre de mon actualité</h3>
+        <div class="actu">
+          <h3>Le titre de mon actualité</h3>
           <p>05/04/2023</p>
           <p>La description de l'actualité</p>
           <p>Le contenu de l'actualité</p>
         </div>
-        <div>
-          <h3>le titre de mon actualité</h3>
+        <div class="actu">
+          <h3>Le titre de mon actualité</h3>
           <p>05/04/2023</p>
           <p>La description de l'actualité</p>
           <p>Le contenu de l'actualité</p>
         </div>
       </div>
     </section>
-    <section>
+    <section id="form">
       <!-- Section contactez nous -->
-      <div>
-        <h2>Contactez-nous</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
-          magnam omnis quibusdam.
-        </p>
-      </div>
-      <div>
+      <form action="#">
         <div>
-          <input type="text" id="name" placeholder="Nom" />
+          <h2>Contactez-nous</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
+            magnam omnis quibusdam.
+          </p>
         </div>
-        <div>
-          <input type="text" id="cat" placeholder="Catégorie" />
+        <div class="line-form">
+          <div >
+            <input type="text" id="name" placeholder="Nom" />
+          </div>
+          <div>
+            <input type="text" id="cat" placeholder="Catégorie" />
+          </div>
         </div>
-      </div>
-      <div>
-        <div>
-          <input type="tel" id="phone" placeholder="Téléphone" />
+        <div class="line-form">
+          <div>
+            <input type="tel" id="phone" placeholder="Téléphone" />
+          </div>
+          <div>
+            <input type="text" id="city" placeholder="Ville" />
+          </div>
         </div>
-        <div>
-          <input type="text" id="city" placeholder="Ville" />
-        </div>
-      </div>
 
-      <div>
-        <input type="email" id="email" placeholder="Email" />
-      </div>
-      <div>
-        <input type="text" id="message" placeholder="Message" />
-      </div>
-      <div>
-        <button type="submit" id="submit">Envoyer</button>
-      </div>
+        <div class="line-email">
+          <input type="email" id="email" placeholder="Email" />
+        </div>
+        <div>
+          <textarea placeholder="Message"></textarea>
+        </div>
+        <div>
+          <input type="submit" id="submit"/>
+        </div>
+      </form>
     </section>
     <section>
       <!-- Section A propos -->
@@ -249,7 +265,9 @@
             <h3>Aide</h3>
           </div>
           <div>
-            <div><img src="assets/phone.svg" alt="téléphone" /></div>
+            <div>
+              <img src="assets/phone.svg" height="50px" alt="téléphone" />
+            </div>
           </div>
           <div>
             <p>+33 00 00 00 00 00</p>
@@ -274,7 +292,7 @@
             <p>adipiscing</p>
           </div>
           <div>
-            <img src="assets/pointer.svg" alt="adresse" />
+            <img src="assets/pointer.svg" height="50px" alt="adresse" />
           </div>
           <p>75001 Paris</p>
           <p>France</p>
@@ -284,7 +302,7 @@
         </div>
       </div>
       <div>
-        <div>Copyright c 2021 AGENCECO - All rights reserved</div>
+        <div>Copyright <i>&#169;</i> 2021 AGENCECO - All rights reserved</div>
         <div>
           <a href="#">Me connecter</a>
         </div>
