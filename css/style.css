@@ -79,8 +79,7 @@ h4 {
 
 #equipe {
   display: inline-block;
-  margin: 10px;
-  padding: 10px;
+  margin: 10%;
 }
 
 #equipe img {
@@ -269,7 +268,7 @@ textarea {
   display: flex;
   /* background-color: #183a43; */
   margin: 100px;
- 
+
   justify-content: space-between;
   gap: 35px;
 }
@@ -282,13 +281,13 @@ textarea {
   font-size: 25px;
   font-weight: 600;
   text-align: center;
-   padding: 50px;
+  padding: 50px;
   border: solid 1px;
   border-radius: 15px;
   vertical-align: middle;
 }
 
-#txt-apropos p{
+#txt-apropos p {
   font-size: 18px;
   font-weight: 300;
   color: #868686;
@@ -309,20 +308,20 @@ textarea {
   padding: 50px;
 }
 
-#icns-apropos p{
-font-size: 18px;
+#icns-apropos p {
+  font-size: 18px;
   font-weight: 600;
   text-transform: capitalize;
   color: #183a43;
   text-align: center;
 }
 
-#galerie{
-padding: auto;
-margin: 10%;
+#galerie {
+  padding: auto;
+  margin: 10%;
 }
 
-#img-galerie{
+#img-galerie {
   border-radius: 35px;
   width: 100%;
 }
@@ -342,18 +341,55 @@ margin: 10%;
   color: #c8ff00;
 }
 
-footer{
+footer {
   background-color: #183a43;
   color: white;
 }
 
-table{
+table {
   padding-bottom: 50px;
   padding-top: 50px;
   margin: auto;
 }
-th, td{
+th,
+td {
   text-align: left;
-  border: 1px solid rgb(160 160 160);
+  /* border: 1px solid rgb(160 160 160); */
   padding: 8px 50px;
+}
+.col5 {
+  color: #c8ff00;
+  font-size: 45px;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+.col6 {
+  text-align: left;
+  padding-left: 20px;
+  
+}
+
+#copyright {
+  background-color: #0c2227;
+  padding:  30px 10%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+#reseaux i{
+ border: solid white 1px;
+ margin: 15px;
+ padding: 5px;
+ border-radius: 5px;
+}
+
+#connect{
+  border: solid #C8FF00;
+  background-color: #C8FF00;
+  border-radius: 10px;
+  padding: 5px 20px;
 }
