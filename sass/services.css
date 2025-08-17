@@ -1,0 +1,20 @@
+#services h3 {
+  font-weight: 600;
+  font-size: 43px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.container-services {
+  height: auto;
+  width: auto;
+  margin: auto;
+}
+
+#services img {
+  height: 250px;
+  width: 300px;
+  padding: 100px;
+  background-color: #f4f6f5;
+  border-radius: 30px;
+}/*# sourceMappingURL=services.css.map */

@@ -1,3 +1,7 @@
+header {
+  font-weight: 600;
+}
+
 #accueil {
   background-image: url("../assets/rodion-kutsaev-049M_crau5k-unsplash.jpg");
 }

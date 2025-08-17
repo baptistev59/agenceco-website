@@ -35,6 +35,48 @@
   display: none;
 }
 
+@media (max-width: 1080px) {
+  nav {
+    width: 100%;
+  }
+  .nav-closed {
+    display: none;
+  }
+  #menu {
+    flex-wrap: wrap;
+  }
+  #burger {
+    display: block;
+    cursor: pointer;
+  }
+  .nav-links {
+    justify-content: center;
+    display: list-item;
+    padding-left: 0;
+    gap: 30px;
+  }
+}
+@media (max-width: 650px) {
+  #accueil {
+    background-size: cover;
+  }
+  header h1 {
+    text-align: center;
+    padding-right: 0px;
+    padding-top: 100px;
+    font-size: 25px;
+  }
+  header h2 {
+    text-align: center;
+    padding-right: 0px;
+    font-size: 30px;
+    padding-bottom: 100px;
+  }
+}
+header {
+  font-weight: 600;
+}
+
 #accueil {
   background-image: url("../assets/rodion-kutsaev-049M_crau5k-unsplash.jpg");
 }
@@ -61,49 +103,6 @@ header h2 {
   padding-right: 50px;
   margin-top: 0px;
   margin-bottom: 0px;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  margin: 125px 0 0 0;
-  padding: 0;
-}
-
-a {
-  font-weight: 500;
-  font-size: 20px;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  color: black;
-}
-
-header {
-  font-weight: 600;
-}
-
-h2 {
-  font-weight: 600;
-  font-size: 53px;
-  color: #469b61;
-  vertical-align: middle;
-  text-align: center;
-}
-
-h3 {
-  font-weight: 500;
-  font-size: 29px;
-  color: black;
-  vertical-align: middle;
-  text-align: center;
-}
-
-h4 {
-  font-weight: 500;
-  font-size: 25px;
-  color: black;
-  vertical-align: middle;
-  text-align: center;
 }
 
 #equipe {
@@ -172,6 +171,12 @@ h4 {
   margin-bottom: 50px;
 }
 
+@media (max-width: 650px) {
+  .client {
+    display: block;
+    padding: 5%;
+  }
+}
 #services h3 {
   font-weight: 600;
   font-size: 43px;
@@ -282,7 +287,7 @@ textarea {
   height: 100px;
   width: 90%;
   align-content: center;
-  text-align: center;
+  text-align: right;
 }
 
 .button-submit {
@@ -290,7 +295,6 @@ textarea {
   font-weight: 500;
   background-color: #c8ff00;
   border: solid 1px #c8ff00;
-  margin-left: 70%;
   padding: 20px 60px;
   border-radius: 50px;
   cursor: pointer;
@@ -305,6 +309,22 @@ textarea {
   border: solid 0px #c8ff00;
 }
 
+@media (max-width: 650px) {
+  .line-form {
+    display: block;
+    margin-left: 10%;
+    margin-top: 0px;
+  }
+  .line-input {
+    width: 80%;
+    height: 100px;
+  }
+  #email {
+    margin-top: 0;
+    width: 70%;
+    margin-left: -10%;
+  }
+}
 #apropos {
   display: flex;
   margin: 0 5%;
@@ -329,8 +349,9 @@ textarea {
 #txt-apropos p {
   font-size: 18px;
   font-weight: 300;
-  color: #868686;
+  color: black;
   text-align: center;
+  text-transform: capitalize;
 }
 
 #icns-apropos {
@@ -340,7 +361,7 @@ textarea {
 }
 
 .icn-apropos {
-  border: solid 4px #183a43;
+  border: solid 4px #193a43;
   height: 70px;
   width: 70px;
   border-radius: 50%;
@@ -368,12 +389,25 @@ textarea {
   font-size: 18px;
   font-weight: 600;
   text-transform: capitalize;
-  color: #183a43;
+  color: #193a43;
   text-align: center;
   padding-bottom: 5%;
   /* margin-bottom: 5%; */
 }
 
+@media (max-width: 1280px) {
+  #apropos {
+    display: block;
+  }
+}
+@media (max-width: 650px) {
+  #img-apropos {
+    display: none;
+  }
+  #icns-apropos {
+    display: block;
+  }
+}
 #galerie {
   margin: 10%;
 }
@@ -511,9 +545,6 @@ footer {
 }
 
 @media (max-width: 1280px) {
-  #apropos {
-    display: block;
-  }
   .footer-contact {
     display: flex;
     gap: 20px;
@@ -526,25 +557,6 @@ footer {
   }
 }
 @media (max-width: 1080px) {
-  nav {
-    width: 100%;
-  }
-  .nav-closed {
-    display: none;
-  }
-  #menu {
-    flex-wrap: wrap;
-  }
-  #burger {
-    display: block;
-    cursor: pointer;
-  }
-  .nav-links {
-    justify-content: center;
-    display: list-item;
-    padding-left: 0;
-    gap: 30px;
-  }
   #foot-menu-mobile {
     display: inline-block;
   }
@@ -570,44 +582,41 @@ footer {
     grid-row: 2;
   }
 }
-@media (max-width: 650px) {
-  #accueil {
-    background-size: cover;
-  }
-  header h1 {
-    text-align: center;
-    padding-right: 0px;
-    padding-top: 100px;
-    font-size: 25px;
-  }
-  header h2 {
-    text-align: center;
-    padding-right: 0px;
-    font-size: 30px;
-    padding-bottom: 100px;
-  }
-  .client {
-    display: block;
-    padding: 5%;
-  }
-  .line-form {
-    display: block;
-    margin-left: 10%;
-    margin-top: 0px;
-  }
-  .line-input {
-    width: 80%;
-    height: 100px;
-  }
-  #email {
-    margin-top: 0;
-    width: 70%;
-    margin-left: -10%;
-  }
-  #img-apropos {
-    display: none;
-  }
-  #icns-apropos {
-    display: block;
-  }
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 125px 0 0 0;
+  padding: 0;
+}
+
+a {
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #000000;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 53px;
+  color: #469b61;
+  vertical-align: middle;
+  text-align: center;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 29px;
+  color: #000000;
+  vertical-align: middle;
+  text-align: center;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 25px;
+  color: #000000;
+  vertical-align: middle;
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */

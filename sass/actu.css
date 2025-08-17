@@ -1,0 +1,17 @@
+.actu {
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  background-color: #469b61;
+  padding: 10px;
+  margin: 10px 5%;
+  border-radius: 10px;
+}
+
+.actu h3 {
+  font-weight: 500;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+}/*# sourceMappingURL=actu.css.map */

@@ -1,0 +1,145 @@
+footer {
+  background-color: #183a43;
+  color: white;
+  text-align: center;
+}
+
+.footer-contact {
+  display: flex;
+  text-align: left;
+  justify-content: space-around;
+  padding: 5%;
+  /* border: solid #469b61; */
+}
+
+.contact1 {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  /* border: solid #9b5746; */
+  width: 100%;
+}
+
+.contact {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* border: solid #464f9b; */
+}
+
+.contact-titre {
+  font-size: 23px;
+}
+
+.adr {
+  display: flex;
+  gap: 10px;
+}
+
+.icn-contact {
+  width: 50px;
+  color: #c8ff00;
+  text-align: right;
+  font-size: 40px;
+}
+
+.adr-contact {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reseaux {
+  width: 40px;
+  height: 40px;
+  border: solid white 1px;
+  margin: 15px;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reseaux:hover {
+  color: #c8ff00;
+  border: solid #c8ff00 1px;
+}
+
+.connect {
+  background-color: #c8ff00;
+  border: solid 1px #c8ff00;
+  border-radius: 10px;
+  padding: 5px 25px;
+  transition: transform 0.5s ease;
+}
+
+.connect:hover {
+  transform: scale(1.05);
+}
+
+.connect:active {
+  border: solid 0 #c8ff00;
+}
+
+.container-grid-copyright {
+  background-color: #0c2227;
+  margin-top: 5%;
+  padding-top: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 100px;
+}
+
+.box {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-color {
+  color: #c8ff00;
+  background-color: #868686;
+}
+
+@media (max-width: 1280px) {
+  .footer-contact {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .adr {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+@media (max-width: 1080px) {
+  #foot-menu-mobile {
+    display: inline-block;
+  }
+  #foot-menu-desktop {
+    display: none;
+  }
+  .container-grid-copyright {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 70px 70px 70px;
+  }
+  .one {
+    font-size: 0.7em;
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .two {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .three {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}/*# sourceMappingURL=footer.css.map */

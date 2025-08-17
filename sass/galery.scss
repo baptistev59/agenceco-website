@@ -1,0 +1,30 @@
+@import "colors.scss";
+
+#galerie {
+  margin: 10%;
+}
+
+#img-galerie {
+  border-radius: 35px;
+  width: 100%;
+}
+
+#icns-galerie {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.icn-galerie {
+  border: solid 4px #183a43;
+  width: 40px;
+  height: 40px;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.icn-galerie:hover {
+  color: #c8ff00;
+  background-color: #183a43;
+}
