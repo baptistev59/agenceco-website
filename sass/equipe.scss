@@ -3,13 +3,25 @@
 #equipe {
   display: inline-block;
   margin: 0 10%;
-}
-
-#equipe img {
-  height: 300px;
-  width: 300px;
-  object-fit: cover;
-  border-radius: 50%;
+  img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  h4 {
+    padding: 0px;
+    margin: 0px;
+  }
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    width: 300px;
+    color: $pers-descr;
+    text-align: center;
+    padding: 0px 50px 50px 50px;
+    margin: 0px;
+  }
 }
 
 .container-photo {
@@ -20,17 +32,4 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-}
-#equipe h4 {
-  padding: 0px;
-  margin: 0px;
-}
-#equipe p {
-  font-weight: 400;
-  font-size: 18px;
-  width: 300px;
-  color: #868686;
-  text-align: center;
-  padding: 0px 50px 50px 50px;
-  margin: 0px;
 }

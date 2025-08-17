@@ -1,31 +1,28 @@
 @import "colors.scss";
+@import "mixin.scss";
 
 .client {
   display: flex;
-  background-color: #183a43;
+  background-color: $footer-links;
   justify-content: space-between;
   padding-left: 10%;
   padding-right: 10%;
-}
-
-.client h3 {
-  font-weight: 700;
-  font-size: 44px;
-  color: #c8ff00;
-  vertical-align: middle;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 0;
-}
-
-.client p {
-  font-weight: 600;
-  font-size: 19px;
-  color: white;
-  vertical-align: middle;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 50px;
+  h3 {
+    font-weight: 700;
+    font-size: 44px;
+    color: $button;
+    @include align-center;
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+  p {
+    font-weight: 600;
+    font-size: 19px;
+    color: white;
+    @include align-center;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
 }
 
 @media (max-width: 650px) {

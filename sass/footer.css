@@ -62,7 +62,6 @@ footer {
   justify-content: center;
   align-items: center;
 }
-
 .reseaux:hover {
   color: #c8ff00;
   border: solid #c8ff00 1px;
@@ -75,11 +74,9 @@ footer {
   padding: 5px 25px;
   transition: transform 0.5s ease;
 }
-
 .connect:hover {
   transform: scale(1.05);
 }
-
 .connect:active {
   border: solid 0 #c8ff00;
 }
@@ -90,7 +87,7 @@ footer {
   padding-top: 5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100px 100px 100px;
+  grid-template-rows: 30px 30px 30px;
 }
 
 .box {

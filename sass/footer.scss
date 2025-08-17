@@ -1,6 +1,6 @@
 @import "colors.scss";
 footer {
-  background-color: #183a43;
+  background-color: $footer-links;
   color: white;
   text-align: center;
 }
@@ -35,7 +35,7 @@ footer {
 }
 .icn-contact {
   width: 50px;
-  color: #c8ff00;
+  color: $button;
   text-align: right;
   font-size: 40px;
 }
@@ -55,34 +55,33 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.reseaux:hover {
-  color: #c8ff00;
-  border: solid #c8ff00 1px;
+  &:hover {
+    color: $button;
+    border: solid $button 1px;
+  }
 }
 
 .connect {
-  background-color: #c8ff00;
-  border: solid 1px #c8ff00;
+  background-color: $button;
+  border: solid 1px $button;
   border-radius: 10px;
   padding: 5px 25px;
   transition: transform 0.5s ease;
-}
-.connect:hover {
-  transform: scale(1.05);
-}
-
-.connect:active {
-  border: solid 0 #c8ff00;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    border: solid 0 $button;
+  }
 }
 
 .container-grid-copyright {
-  background-color: #0c2227;
+  background-color: $footer-copyr;
   margin-top: 5%;
   padding-top: 5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100px 100px 100px;
+  grid-template-rows: 30px 30px 30px;
 }
 
 .box {
@@ -92,8 +91,8 @@ footer {
   justify-content: center;
 }
 .logo-color {
-  color: #c8ff00;
-  background-color: #868686;
+  color: $button;
+  background-color: $pers-descr;
 }
 
 @media (max-width: 1280px) {
@@ -102,12 +101,13 @@ footer {
     gap: 20px;
     flex-direction: column;
   }
-    .adr {
+  .adr {
     display: flex;
     justify-content: center;
     gap: 10px;
   }
-}@media (max-width: 1080px) {
+}
+@media (max-width: 1080px) {
   #foot-menu-mobile {
     display: inline-block;
   }
@@ -134,4 +134,3 @@ footer {
     grid-row: 2;
   }
 }
-

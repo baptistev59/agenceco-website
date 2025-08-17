@@ -18,14 +18,13 @@
   border-radius: 15px;
   padding: 0 5%;
 }
-
-#txt-apropos p {
+#soustxt-apropos {
   font-size: 18px;
   font-weight: 300;
-  color: black;
+  color: $police-color;
   text-align: center;
-  text-transform: capitalize;
 }
+
 #icns-apropos {
   display: flex;
   justify-content: space-around;
@@ -41,6 +40,19 @@
   margin: auto;
   text-align: center;
   animation: icn-apropos-gliss 1s 1;
+  img {
+    height: auto;
+    width: 70px;
+    margin: auto;
+  }
+}
+.txt-icn-apropos {
+  font-size: 18px;
+  font-weight: 600;
+  color: $footer-links;
+  text-align: center;
+  padding-bottom: 5%;
+  text-transform: capitalize;
 }
 
 @keyframes icn-apropos-gliss {
@@ -51,22 +63,6 @@
   100% {
     transform: translateX(0px);
   }
-}
-
-.icn-apropos img {
-  height: auto;
-  width: 70px;
-  margin: auto;
-}
-
-.icns-apropos p {
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: capitalize;
-  color: $footer-links;
-  text-align: center;
-  padding-bottom: 5%;
-  /* margin-bottom: 5%; */
 }
 
 @media (max-width: 1280px) {

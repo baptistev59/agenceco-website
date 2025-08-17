@@ -13,12 +13,11 @@
 #logo {
   font-weight: 700;
   font-size: 43px;
-  text-align: center;
   vertical-align: middle;
+  text-align: center;
   text-decoration: none;
   color: #255919;
 }
-
 #logo span {
   font-style: italic;
 }
