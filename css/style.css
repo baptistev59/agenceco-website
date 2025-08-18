@@ -271,14 +271,13 @@ textarea {
   height: 100px;
   width: 90%;
   align-content: center;
-  text-align: center;
+  text-align: right;
 }
 .button-submit {
   font-size: 1.2em;
   font-weight: 500;
   background-color: #c8ff00;
   border: solid 1px #c8ff00;
-  margin-left: 70%;
   padding: 20px 60px;
   border-radius: 50px;
   cursor: pointer;
@@ -391,7 +390,7 @@ textarea {
 }
 
 footer {
-  /* background-color: #183a43; */
+  background-color: #183a43;
   color: white;
   text-align: center;
 }
@@ -469,11 +468,10 @@ footer {
 
 .container-grid-copyright {
   background-color: #0c2227;
-  margin-top: 5%;
-  padding-top: 5%;
+  padding-top: 2%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100px 100px 100px;
+  grid-template-rows: 30px 30px 30px;
 }
 
 .box {
