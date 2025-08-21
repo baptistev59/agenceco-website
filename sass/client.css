@@ -1,11 +1,11 @@
-.client {
+#clients {
   display: flex;
   background-color: #183a43;
   justify-content: space-between;
   padding-left: 10%;
   padding-right: 10%;
 }
-.client h3 {
+#clients h3 {
   font-weight: 700;
   font-size: 44px;
   color: #c8ff00;
@@ -14,7 +14,7 @@
   margin-top: 50px;
   margin-bottom: 0;
 }
-.client p {
+#clients p {
   font-weight: 600;
   font-size: 19px;
   color: white;
@@ -25,7 +25,7 @@
 }
 
 @media (max-width: 650px) {
-  .client {
+  #clients {
     display: block;
     padding: 5%;
   }

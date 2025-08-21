@@ -9,11 +9,81 @@
   padding: 10px;
   margin: 10px 5%;
   border-radius: 10px;
+  h3 {
+    font-weight: 500;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+  }
+}
+.actualites{
+  text-align: center;
+}
+.blog h3, .date{
+    text-align: left;
+    margin-top: 0;
+  }
+.ajout {
+  background-color: $button;
+  border: solid 1px $button;
+  border-radius: 10px;
+  padding: 5px 25px;
+  transition: transform 0.5s ease;
+  width: 300px;
+  text-align: center;
+  margin: auto;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    border: solid 0 $button;
+  }
+}
+.bott{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.actu h3 {
-  font-weight: 500;
-  font-size: 30px;
+.modif{
+  display: inline-block;
   color: white;
-  text-align: center;
+  font-size: 1em;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: #FFAA00;
+  height: 30px;
+  width: 140px;
+  border-radius: 5px;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin: 0 10px;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    border: solid 0px $button;
+  }
+}
+.suppr{
+  display: inline-block;
+  color: white;
+  font-size: 1em;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: #FF0000;
+  // padding: 15px;
+  height: 30px;
+  width: 140px;
+  border-radius: 5px;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    border: solid 0px $button;
+  }
 }

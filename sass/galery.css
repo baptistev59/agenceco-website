@@ -1,10 +1,28 @@
 #galerie {
-  margin: 10%;
+  margin: 5%;
+}
+
+.slider {
+  width: 80%;
+  max-width: 1000px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.slides {
+  display: flex;
+  transition: all 0.5s;
+}
+
+.slide {
+  min-width: 100%;
 }
 
 #img-galerie {
   border-radius: 35px;
   width: 100%;
+  height: auto;
+  display: block;
 }
 
 #icns-galerie {
@@ -21,7 +39,14 @@
   padding: 20px;
   border-radius: 50%;
 }
+.icn-galerie a {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
 .icn-galerie:hover {
   color: #c8ff00;
   background-color: #183a43;
+}
+.icn-galerie:hover a {
+  color: #c8ff00;
 }/*# sourceMappingURL=galery.css.map */
