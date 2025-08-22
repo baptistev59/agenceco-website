@@ -49,15 +49,23 @@
       </div>
     </header>
     <main>
-      <section id="new-list">
-        <h2>Nos actualités</h2>
+      <section id="titre">
         <div>
-          <div class="ajout">
-            <a>Ajouter une actualité</a>
-          </div>
+          <h2>Connexion</h2>
+          <h3>Pour voir les actualités, merci de vous connecter.</h3>
         </div>
-        <div id="articles"></div>
       </section>
+      <form action="#" method="post" id="connectForm">
+        <div>
+            <input type="email" name="email" id="ident" placeholder="E-mail">
+        </div>
+        <div>
+            <input type="password" name="password" id="password" placeholder="Mot de passe">
+        </div>
+        <div>
+            <button type="submit" name="submit" id="submit">Me connecter</button>
+        </div>
+      </form>
     </main>
     <footer>
       <!-- footer avec info de contact -->
@@ -95,6 +103,7 @@
           </div>
         </div>
       </div>
+
       <div class="container-grid-copyright">
         <div class="box one">
           Copyright <i>&#169;</i> 2021 AGENCECO - All rights reserved
@@ -117,6 +126,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/scriptArticles.js"></script>
+    <script src="js/scriptConnexion.js"></script>
   </body>
 </html>

@@ -11,18 +11,48 @@ burger.addEventListener('click', () => {
 async function getListArt() {
     fetch(urlGetListArt)
         .then(response => response.json())
-        .then(articles => {
+        .then(articles => {   
+            console.log(articles);
+            articles.sort(classer);         
             articles.forEach(article => {
-                console.log("fonction article fetch");
+                console.log("fonction article fetch" , article);
                 displayArticle(article);
             });
         })
+        .catch(error => {
+            console.error('Erreur : ', error.message);
+            displayErreur(error.message);
+        });
+
 };
+
+function classer(a, b) {
+    return (a.publicationDate < b.publicationDate) ? 1 : -1;
+}
+
 getListArt();
+
+function displayErreur(error) {
+    console.log("fonction displayErreur");
+    const articles = document.getElementById('articles');
+
+    const div = document.createElement('div');
+    div.classList = 'actu erreur';
+
+    const h3 = document.createElement('h3');
+    if (error === 'Failed to fetch') {
+        h3.textContent = "Le serveur ne répond pas !";
+    } else {
+        h3.textContent = "Il y a une erreur : " + error;
+    }
+
+    div.appendChild(h3);
+    articles.appendChild(div);
+}
 
 function displayArticle(article) {
     console.log("fonction displayArticle");
-    
+
     const articles = document.getElementById('articles');
 
     const div = document.createElement('div');
@@ -41,7 +71,11 @@ function displayArticle(article) {
     divDate.classList = 'bott';
 
     const date = document.createElement('p');
-    date.textContent = "Publié le " + article.publicationDate;
+    let myDate = new Date(article.publicationDate);
+    console.log("myDate : ", myDate.toDateString());
+    let dateFr = myDate.toLocaleDateString("fr");
+    console.log("datefr : ", dateFr);
+    date.textContent = "Publié le " + dateFr;
 
     const divButt = document.createElement('div');
 
@@ -60,6 +94,12 @@ function displayArticle(article) {
     divButt.appendChild(buttModif);
     divButt.appendChild(buttSuppr);
     divDate.appendChild(divButt);
-    div.appendChild(divDate)
+    div.appendChild(divDate);
     articles.appendChild(div);
+}
+
+function triDateFrAsc(a, b) {
+    let dateA = new Date(a.date.split("/").reverse().join('-'));
+    let dateB = new Date(b.date.split("/").reverse().join('-'));
+    return (dateA > dateB) ? 1 : -1;
 }
