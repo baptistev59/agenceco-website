@@ -17,19 +17,21 @@
   }
 }
 
-.erreur{
-  background-color: #FF0000;
+.erreur {
+  background-color: #ff0000;
 }
-.actualites{
+.actualites {
   text-align: center;
 }
-.blog h3, .date{
-    text-align: left;
-    margin-top: 0;
-  }
+.blog h3,
+.date {
+  text-align: left;
+  margin-top: 0;
+}
 .ajout {
   background-color: $button;
   border: solid 1px $button;
+  cursor: pointer;
   border-radius: 10px;
   padding: 5px 25px;
   transition: transform 0.5s ease;
@@ -43,19 +45,19 @@
     border: solid 0 $button;
   }
 }
-.bott{
+.bott {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.modif{
+.modif {
   display: inline-block;
   color: white;
   font-size: 1em;
   font-weight: 700;
   font-size: 18px;
-  background-color: #FFAA00;
+  background-color: #ffaa00;
   height: 30px;
   width: 140px;
   border-radius: 5px;
@@ -70,13 +72,13 @@
     border: solid 0px $button;
   }
 }
-.suppr{
+.suppr {
   display: inline-block;
   color: white;
   font-size: 1em;
   font-weight: 700;
   font-size: 18px;
-  background-color: #FF0000;
+  background-color: #ff0000;
   // padding: 15px;
   height: 30px;
   width: 140px;

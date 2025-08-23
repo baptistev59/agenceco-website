@@ -8,14 +8,17 @@ burger.addEventListener('click', () => {
     nav.classList.toggle('nav-closed');
 });
 
-async function getListArt() {
-    fetch(urlGetListArt)
-        .then(response => response.json())
-        .then(articles => {   
+async function getListArt(url) {
+    const response = await fetch(url, { method: 'GET' });
+    return response.json();
+};
+
+getListArt(urlGetListArt)
+.then(articles => {
             console.log(articles);
-            articles.sort(classer);         
+            articles.sort(classer);
             articles.forEach(article => {
-                console.log("fonction article fetch" , article);
+                console.log("fonction article fetch", article);
                 displayArticle(article);
             });
         })
@@ -24,13 +27,9 @@ async function getListArt() {
             displayErreur(error.message);
         });
 
-};
-
 function classer(a, b) {
     return (a.publicationDate < b.publicationDate) ? 1 : -1;
 }
-
-getListArt();
 
 function displayErreur(error) {
     console.log("fonction displayErreur");
@@ -45,7 +44,6 @@ function displayErreur(error) {
     } else {
         h3.textContent = "Il y a une erreur : " + error;
     }
-
     div.appendChild(h3);
     articles.appendChild(div);
 }
@@ -72,12 +70,17 @@ function displayArticle(article) {
 
     const date = document.createElement('p');
     let myDate = new Date(article.publicationDate);
-    console.log("myDate : ", myDate.toDateString());
     let dateFr = myDate.toLocaleDateString("fr");
-    console.log("datefr : ", dateFr);
     date.textContent = "Publié le " + dateFr;
 
     const divButt = document.createElement('div');
+    if (localStorage.getItem('token')) {
+        divButt.classList = 'undisplayConnect';
+    } else {
+        divButt.classList = 'displayConnect';
+    }
+
+
 
     const buttModif = document.createElement('a');
     buttModif.textContent = "Modifier";
@@ -103,3 +106,31 @@ function triDateFrAsc(a, b) {
     let dateB = new Date(b.date.split("/").reverse().join('-'));
     return (dateA > dateB) ? 1 : -1;
 }
+
+cacherBtCnx();
+
+function cacherBtCnx() {
+    console.log("fonction cacherBtCnx !");
+    if (localStorage.getItem('token')) {
+        console.log("connexion ok !");
+
+        const displayConnects = document.getElementsByClassName('displayConnect');
+        const undisplayConnects = document.getElementsByClassName('undisplayConnect');
+        console.log('displayConnect : ', displayConnects);
+        console.log('undisplayConnect : ', undisplayConnects);
+
+        for (let index = 0; index < displayConnects.length; index++) {
+            const displayConnect = displayConnects[index];
+            displayConnect.style.display = "block";
+        }
+
+        for (let index = 0; index < undisplayConnects.length; index++) {
+            const undisplayConnect = undisplayConnects[index];
+            undisplayConnect.style.display = "none";
+        }
+    }
+}
+
+btDeconnect.addEventListener('click', () => {
+    localStorage.clear();
+})

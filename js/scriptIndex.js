@@ -88,3 +88,18 @@ function displayArticleAccueil(article) {
 }
 
 getListArt();
+
+cacherBtCnx();
+
+function cacherBtCnx(){
+    console.log("fonction cacherBtCnx !");    
+    if(localStorage.getItem('token')){
+        console.log("connexion ok !");
+        document.getElementById('btDeconnect').style.display="block";
+        document.getElementById('btConnect').style.display="none";
+    }
+}
+
+btDeconnect.addEventListener('click', () => {
+    localStorage.clear();
+})

@@ -18,6 +18,7 @@
   box-shadow: 5px 5px 5px grey;
 }
 #connectForm #submit {
+  display: inline-block;
   font-size: 17px;
   font-weight: 500;
   width: 200px;
@@ -28,4 +29,13 @@
   text-align: center;
   padding: 15px 25px;
   margin: 20px 0 150px 0;
+  cursor: pointer;
+}
+
+.displayConnect {
+  display: none;
+}
+
+.undispalyConnect {
+  display: block;
 }/*# sourceMappingURL=connect.css.map */

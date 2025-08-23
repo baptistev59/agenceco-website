@@ -1,52 +1,105 @@
 const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
 
+const urlApi = "http://localhost:3000";
+const urlGetToken = urlApi + "/login";
+const urlBlog = "./blog.html";
+const urlConn = "connexion.html";
+
+const form = document.getElementById('connectForm');
+const submit = document.getElementById('submit');
+const btDeconnect=document.getElementById('btDeconnect');
+
 burger.addEventListener('click', () => {
     nav.classList.toggle('nav-closed');
 });
+btDeconnect.addEventListener('click', () => {
+    localStorage.clear();
+})
+cacherForm();
 
-const urlApi = "http://localhost:3000";
-const urlGetListArt = urlApi + "/articles";
+submit.addEventListener('click', function () {
 
-const section = document.getElementById('new-list');
-const div = document.getElementById('articles');
+    const email = document.getElementById('ident').value;
+    const password = document.getElementById('password').value;
 
-// async function getListArt() {
-//     fetch(urlGetListArt)
-//         .then(response => response.json())
-//         .then(articles => {
-//             articles.forEach(article => {
-//                 console.log(article);
-//                 displayArticleAccueil(article);
-//             });
-//         })
-// };
+    localStorage.setItem('email', email);
 
-// function displayArticleAccueil(article) {
-//     const artAccueil = document.getElementById('artAccueil');
+    let login = {
+        "email": email,
+        "password": password
+    }
+    supprErreur();
+    getToken(login);
+})
 
-//     const div = document.createElement('div');
-//     div.classList = 'actu';
+async function getToken(login) {
+    fetch(urlGetToken, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(login)
+    })
+        .then(response => response.json())
+        .then(response => {
+            if (response.token) {
+                console.log(response.token);
+                localStorage.setItem('token', response.token);
+                redirect(urlBlog);
+            } else {
+                console.log(response.message);
+                displayErreur(response.message);
+            }
+        })
+        .catch(error => {
+            console.log('Erreur : ', error);
+            displayErreur("Le serveur ne répond pas !");;
+        })
+};
 
-//     const h3 = document.createElement('h3');
-//     h3.textContent = article.title;
+function displayErreur(error) {
+    console.log("fonction displayErreur");
+    const message = document.getElementById('message');
 
-//     const date = document.createElement('date');
-//     console.log(article.publicationDate);
+    const div = document.createElement('div');
+    div.classList = 'actu erreur';
+
+    const h3 = document.createElement('h3');
+    h3.textContent = error;
+
+
+    div.appendChild(h3);
+    message.appendChild(div);
+}
+
+function supprErreur() {
+    console.log("fonction supprErreur");
+    const message = document.getElementById('message');
+    while (message.firstChild) {
+        message.removeChild(message.firstChild);
+    }
+}
+
+function redirect(url) {
+    if (localStorage.getItem('token')) {
+        window.location.href = url;
+    } else {
+        window.location.href = urlConn;
+    }
     
-//     date.textContent = article.publicationDate;
+}
 
-//     const p1 = document.createElement('p');
-//     p1.textContent = article.description;
+function cacherForm(){
+    console.log("fonction cacherForm !");
+    
+    const form = document.getElementById('connectForm');
+    console.log();
+    
+    if(localStorage.getItem('token')){
+        console.log("connexion ok !");
+        document.getElementById('connectForm').style.display="none";      
+        document.getElementById('connectOk').style.display="block";
+        document.getElementById('btDeconnect').style.display="block";
+        document.getElementById('btConnect').style.display="none";
+    }
+}
 
-//     const p2 = document.createElement('p');
-//     p2.textContent = article.content;
-
-//     div.appendChild(h3);
-//     div.appendChild(date);
-//     div.appendChild(p1);
-//     div.appendChild(p2);
-//     artAccueil.appendChild(div);
-// }
-
-// getListArt();
