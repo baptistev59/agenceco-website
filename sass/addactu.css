@@ -1,0 +1,33 @@
+#addActuForm {
+  background-color: #183a43;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  color: #ffffff;
+}
+#addActuForm .div-input {
+  text-align: center;
+}
+#addActuForm .div-input #descriptActu {
+  height: 60px;
+}
+#addActuForm .div-input #contentActu {
+  height: 90px;
+}
+#addActuForm input, #addActuForm textarea {
+  width: 95%;
+  height: 30px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  border: #ffffff solid 2px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0px;
+}
+#addActuForm .line-button {
+  text-align: center;
+}/*# sourceMappingURL=addactu.css.map */

@@ -21,7 +21,7 @@
   </head>
   <body>
     <header>
-       <div id="menu">
+      <div id="menu">
         <!-- Logo -->
         <a href="./index.html" id="logo">Agenc<span>eco</span></a>
         <!-- menu burger -->
@@ -40,14 +40,43 @@
       </div>
     </header>
     <main>
-      <section id="new-list">
-        <h2>Nos actualités</h2>
+      <section id="titre">
         <div>
-          <div class="ajout displayConnect" id="btAjoutActu">
-            <a >Ajouter une actualité</a>
-          </div>
-        <div id="articles"></div>
+          <h2>Ajouter une actualité</h2>
+        </div>
       </section>
+      <form >
+        <div id="addActuForm">
+          <div class="div-input">
+            <input
+              type="text"
+              id="titleActu"
+              placeholder="Le titre de mon actualité"
+            />
+          </div>
+          <div class="div-input">
+            <textarea
+            id="descriptActu"
+              aria-label="descriptActu"
+              title="description"
+              placeholder="Sa description"
+            ></textarea>
+            <!-- <input type="text" id="descriptActu" placeholder="Sa description" /> -->
+          </div>
+          <div class="div-input">
+            <textarea
+            id="contentActu"
+              aria-label="contentActu"
+              title="contenu"
+              placeholder="Son contenu"
+            ></textarea>
+            <!-- <input type="text" id="contentActu" placeholder="Son contenu" /> -->
+          </div>
+          <div class="line-button">
+            <a id="submitActu" class="button-submit">Sauvegarder</a>
+          </div>
+        </div>
+      </form>
     </main>
     <footer>
       <!-- footer avec info de contact -->
@@ -110,6 +139,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/scriptArticles.js"></script>
+    <script src="js/scriptAddActu.js"></script>
   </body>
 </html>

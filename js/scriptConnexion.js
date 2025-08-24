@@ -4,7 +4,7 @@ const nav = document.getElementById('nav');
 const urlApi = "http://localhost:3000";
 const urlGetToken = urlApi + "/login";
 const urlBlog = "./blog.html";
-const urlConn = "connexion.html";
+const urlConn = "./connexion.html";
 
 const form = document.getElementById('connectForm');
 const submit = document.getElementById('submit');
@@ -96,10 +96,34 @@ function cacherForm(){
     
     if(localStorage.getItem('token')){
         console.log("connexion ok !");
-        document.getElementById('connectForm').style.display="none";      
+        document.getElementById('connectForm').style.display="none";
+        
         document.getElementById('connectOk').style.display="block";
-        document.getElementById('btDeconnect').style.display="block";
-        document.getElementById('btConnect').style.display="none";
+        // document.getElementById('btDeconnect').style.display="block";
+        // document.getElementById('btConnect').style.display="none";
     }
 }
 
+cacherBtCnx();
+
+function cacherBtCnx() {
+    console.log("fonction cacherBtCnx !");
+    if (localStorage.getItem('token')) {
+        console.log("connexion ok !");
+
+        const displayConnects = document.getElementsByClassName('displayConnect');
+        const undisplayConnects = document.getElementsByClassName('undisplayConnect');
+        console.log('displayConnect : ', displayConnects);
+        console.log('undisplayConnect : ', undisplayConnects);
+
+        for (let index = 0; index < displayConnects.length; index++) {
+            const displayConnect = displayConnects[index];
+            displayConnect.style.display = "block";
+        }
+
+        for (let index = 0; index < undisplayConnects.length; index++) {
+            const undisplayConnect = undisplayConnects[index];
+            undisplayConnect.style.display = "none";
+        }
+    }
+}

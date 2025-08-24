@@ -1,5 +1,7 @@
 const urlApi = "http://localhost:3000";
 const urlGetListArt = urlApi + "/articles";
+const urlAddActu = './addactu.html';
+const urlLogin = './connexion.html';
 
 const section = document.getElementById('new-list');
 const div = document.getElementById('articles');
@@ -133,4 +135,14 @@ function cacherBtCnx() {
 
 btDeconnect.addEventListener('click', () => {
     localStorage.clear();
+})
+
+const btAjoutActu = document.getElementById('btAjoutActu');
+
+btAjoutActu.addEventListener('click', () => {
+    if (localStorage.getItem('token')) {
+        document.location.href=urlAddActu;
+    } else {
+        document.location.href=urlLogin;
+    }
 })
