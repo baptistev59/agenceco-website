@@ -1,7 +1,14 @@
 const urlApi = "http://localhost:3000";
 const urlGetListArt = urlApi + "/articles";
+
+const urlDelArt = urlApi + "/articles/";
 const urlAddActu = './addactu.html';
 const urlLogin = './connexion.html';
+const urlModifActu = './modifactu.html';
+const urlBlog = './blog.html';
+
+const messSuppr = "Voulez-vous supprimer l'article ?";
+
 
 const section = document.getElementById('new-list');
 const div = document.getElementById('articles');
@@ -16,18 +23,18 @@ async function getListArt(url) {
 };
 
 getListArt(urlGetListArt)
-.then(articles => {
-            console.log(articles);
-            articles.sort(classer);
-            articles.forEach(article => {
-                console.log("fonction article fetch", article);
-                displayArticle(article);
-            });
-        })
-        .catch(error => {
-            console.error('Erreur : ', error.message);
-            displayErreur(error.message);
+    .then(articles => {
+        console.log(articles);
+        articles.sort(classer);
+        articles.forEach(article => {
+            console.log("fonction article fetch", article);
+            displayArticle(article);
         });
+    })
+    .catch(error => {
+        console.error('Erreur : ', error.message);
+        displayErreur(error.message);
+    });
 
 function classer(a, b) {
     return (a.publicationDate < b.publicationDate) ? 1 : -1;
@@ -82,8 +89,6 @@ function displayArticle(article) {
         divButt.classList = 'displayConnect';
     }
 
-
-
     const buttModif = document.createElement('a');
     buttModif.textContent = "Modifier";
     buttModif.classList = 'modif';
@@ -101,7 +106,18 @@ function displayArticle(article) {
     divDate.appendChild(divButt);
     div.appendChild(divDate);
     articles.appendChild(div);
+
+    buttModif.addEventListener('click', () => {
+        sessionStorage.setItem('idArticle', article.id);
+        document.location.href = urlModifActu;
+    })
+
+    buttSuppr.addEventListener('click', () => {
+        demConfirmSuppr(messSuppr, article.id);
+    })
 }
+
+
 
 function triDateFrAsc(a, b) {
     let dateA = new Date(a.date.split("/").reverse().join('-'));
@@ -139,10 +155,38 @@ btDeconnect.addEventListener('click', () => {
 
 const btAjoutActu = document.getElementById('btAjoutActu');
 
+
 btAjoutActu.addEventListener('click', () => {
     if (localStorage.getItem('token')) {
-        document.location.href=urlAddActu;
+        document.location.href = urlAddActu;
     } else {
-        document.location.href=urlLogin;
+        document.location.href = urlLogin;
     }
 })
+
+async function delArticleById(url, id) {
+    url = url + id
+    try {
+        const response = await fetch(url, {
+            method: 'DELETE'
+        });
+        const resultat = await response.json();
+        console.log("suppr réussi : ", resultat.title);
+        return resultat;
+    } catch (error) {
+        console.error("Erreur : ", error);
+    }
+};
+
+function demConfirmSuppr(message, idArticle) {
+    var confirmation = confirm(message); // Affiche le message de confirmation
+    if (confirmation) {
+        // L'utilisateur a cliqué sur "OK", on peut procéder à la suppression
+        delArticleById(urlDelArt, idArticle),
+            document.location.href = urlBlog;
+        console.log("L'élément a été supprimé.");
+    } else {
+        // L'utilisateur a cliqué sur "Annuler", l'action est annulée
+        console.log("Suppression annulée.");
+    }
+}

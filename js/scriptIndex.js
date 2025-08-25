@@ -53,12 +53,23 @@ async function getListArt() {
     fetch(urlGetListArt)
         .then(response => response.json())
         .then(articles => {
-            articles.forEach(article => {
-                console.log(article);
-                displayArticleAccueil(article);
-            });
+            articles.sort(classer);
+            for (let i = 0; i < articles.length; i++) {
+                if (i <= 2) {
+                    const article = articles[i];
+                    console.log(article, " " + i);
+                    displayArticleAccueil(article);
+                } else {
+                    return;
+                }
+
+            }
         })
 };
+
+function classer(a, b) {
+    return (a.publicationDate < b.publicationDate) ? 1 : -1;
+}
 
 function displayArticleAccueil(article) {
     const artAccueil = document.getElementById('artAccueil');
@@ -70,9 +81,9 @@ function displayArticleAccueil(article) {
     h3.textContent = article.title;
 
     const date = document.createElement('date');
-    console.log(article.publicationDate);
-    
-    date.textContent = article.publicationDate;
+    let myDate = new Date(article.publicationDate);
+    let dateFr = myDate.toLocaleDateString("fr");
+    date.textContent = dateFr;
 
     const p1 = document.createElement('p');
     p1.textContent = article.description;
@@ -91,12 +102,25 @@ getListArt();
 
 cacherBtCnx();
 
-function cacherBtCnx(){
-    console.log("fonction cacherBtCnx !");    
-    if(localStorage.getItem('token')){
+function cacherBtCnx() {
+    console.log("fonction cacherBtCnx !");
+    if (localStorage.getItem('token')) {
         console.log("connexion ok !");
-        document.getElementById('btDeconnect').style.display="block";
-        document.getElementById('btConnect').style.display="none";
+
+        const displayConnects = document.getElementsByClassName('displayConnect');
+        const undisplayConnects = document.getElementsByClassName('undisplayConnect');
+        console.log('displayConnect : ', displayConnects);
+        console.log('undisplayConnect : ', undisplayConnects);
+
+        for (let index = 0; index < displayConnects.length; index++) {
+            const displayConnect = displayConnects[index];
+            displayConnect.style.display = "block";
+        }
+
+        for (let index = 0; index < undisplayConnects.length; index++) {
+            const undisplayConnect = undisplayConnects[index];
+            undisplayConnect.style.display = "none";
+        }
     }
 }
 

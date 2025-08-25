@@ -17,7 +17,8 @@
 #addActuForm .div-input #contentActu {
   height: 90px;
 }
-#addActuForm input, #addActuForm textarea {
+#addActuForm input,
+#addActuForm textarea {
   width: 95%;
   height: 30px;
   background-color: transparent;
@@ -28,6 +29,22 @@
   padding: 10px;
   margin: 10px 0px;
 }
-#addActuForm .line-button {
+#addActuForm .line-buttAdd {
   text-align: center;
+  width: 100%;
+  display: inline-block;
+  padding: 20px;
+}
+#addActuForm .line-buttMod {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+#addActuForm #delActu {
+  background-color: red;
+  color: #ffffff;
+  border-color: red;
 }/*# sourceMappingURL=addactu.css.map */

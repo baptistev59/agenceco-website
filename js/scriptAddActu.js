@@ -51,6 +51,7 @@ async function postAddArticle(url, article) {
         return resultat;
     } catch (error) {
         console.error("Erreur : ", error);
+
     }
 
     
