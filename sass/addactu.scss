@@ -34,22 +34,29 @@
 
   .line-buttAdd {
     text-align: center;
-    width: 100%;    
+    width: 100%;
     display: inline-block;
     padding: 20px;
   }
 
   .line-buttMod {
-    display: inline-block;
-    text-align: center;
-    width: 100%;
     display: flex;
     justify-content: space-around;
     padding: 20px;
   }
-  #delActu{
+  #delActu {
     background-color: red;
     color: #ffffff;
     border-color: red;
+  }
+
+  @media (max-width: 650px) {
+    .line-buttMod {
+      display: grid;
+      gap: 25px;
+    }
+    input, textarea {
+      font-size: 15px;
+    }
   }
 }

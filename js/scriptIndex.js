@@ -6,6 +6,8 @@ const slides = document.getElementById('slides');
 const nbSlides = slides.children.length;
 let slide = 0;
 
+const urlDetail = "/detailActu.html"
+
 
 burger.addEventListener('click', () => {
     nav.classList.toggle('nav-closed');
@@ -96,6 +98,21 @@ function displayArticleAccueil(article) {
     div.appendChild(p1);
     div.appendChild(p2);
     artAccueil.appendChild(div);
+
+    div.addEventListener('click', () => {
+        console.log("click sur actu identifiée n°", article.id, " effectué !");
+        document.location.href = constUrlDetail(article);
+
+    })
+}
+
+function constUrlDetail(article) {
+    const url = new URL(window.location.origin);
+    url.origin = window.location.origin;
+    url.pathname = urlDetail;
+    url.searchParams.append('id', article.id);
+    console.log("New URL détail : ", url.href);
+    return url.href;
 }
 
 getListArt();

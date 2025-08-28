@@ -1,11 +1,12 @@
 const urlApi = "http://localhost:3000";
 const urlGetListArt = urlApi + "/articles";
-
 const urlDelArt = urlApi + "/articles/";
+
 const urlAddActu = './addactu.html';
 const urlLogin = './connexion.html';
 const urlModifActu = './modifactu.html';
 const urlBlog = './blog.html';
+const urlDetail = "./detailactu.html"
 
 const messSuppr = "Voulez-vous supprimer l'article ?";
 
@@ -67,6 +68,7 @@ function displayArticle(article) {
 
     const h3 = document.createElement('h3');
     h3.textContent = article.title;
+    h3.style.cursor = "pointer";
 
     const p1 = document.createElement('p');
     p1.textContent = article.description;
@@ -115,8 +117,22 @@ function displayArticle(article) {
     buttSuppr.addEventListener('click', () => {
         demConfirmSuppr(messSuppr, article.id);
     })
+
+    h3.addEventListener('click', () => {
+        console.log("click sur actu identifiée n°", article.id, " effectué !");
+        document.location.href = constUrlDetail(article);
+
+    })
 }
 
+function constUrlDetail(article) {
+    const url = new URL(window.location.origin);
+    url.origin = window.location.origin;
+    url.pathname = urlDetail;
+    url.searchParams.append('id', article.id);
+    console.log("New URL détail : ", url.href);
+    return url.href;
+}
 
 
 function triDateFrAsc(a, b) {

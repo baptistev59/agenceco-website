@@ -84,6 +84,11 @@
   border: solid 0px #c8ff00;
 }
 
+.line-buttMod {
+  text-align: center;
+  padding: 30px;
+}
+
 @media (max-width: 650px) {
   .line-form {
     display: block;

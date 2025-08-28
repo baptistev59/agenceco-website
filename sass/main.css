@@ -2,12 +2,12 @@
   background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 30px;
+  justify-content: space-between;
+  padding: 30px 5%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   z-index: 100;
 }
 
@@ -122,7 +122,6 @@ header h2 {
 }
 #equipe {
   display: inline-block;
-  margin: 0 10%;
 }
 #equipe img {
   height: 300px;
@@ -188,8 +187,7 @@ header h2 {
   }
 }
 #services img {
-  height: 250px;
-  width: 300px;
+  height: 100px;
   padding: 100px;
   background-color: #f4f6f5;
   border-radius: 30px;
@@ -200,10 +198,14 @@ header h2 {
   vertical-align: middle;
   text-align: center;
 }
+#services .services {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+}
 #services .container-services {
-  height: auto;
-  width: auto;
-  margin: auto;
+  text-align: center;
 }
 
 .actu {
@@ -390,6 +392,11 @@ header h2 {
   border: solid 0px #c8ff00;
 }
 
+.line-buttMod {
+  text-align: center;
+  padding: 30px;
+}
+
 @media (max-width: 650px) {
   .line-form {
     display: block;
@@ -506,7 +513,7 @@ header h2 {
   min-width: 100%;
 }
 
-#img-galerie {
+.img-galerie {
   border-radius: 35px;
   width: 100%;
   height: auto;
@@ -719,9 +726,6 @@ footer {
   padding: 20px;
 }
 #addActuForm .line-buttMod {
-  display: inline-block;
-  text-align: center;
-  width: 100%;
   display: flex;
   justify-content: space-around;
   padding: 20px;
@@ -730,6 +734,15 @@ footer {
   background-color: red;
   color: #ffffff;
   border-color: red;
+}
+@media (max-width: 650px) {
+  #addActuForm .line-buttMod {
+    display: grid;
+    gap: 25px;
+  }
+  #addActuForm input, #addActuForm textarea {
+    font-size: 15px;
+  }
 }
 
 #connectForm {

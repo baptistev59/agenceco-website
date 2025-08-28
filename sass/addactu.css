@@ -36,9 +36,6 @@
   padding: 20px;
 }
 #addActuForm .line-buttMod {
-  display: inline-block;
-  text-align: center;
-  width: 100%;
   display: flex;
   justify-content: space-around;
   padding: 20px;
@@ -47,4 +44,13 @@
   background-color: red;
   color: #ffffff;
   border-color: red;
+}
+@media (max-width: 650px) {
+  #addActuForm .line-buttMod {
+    display: grid;
+    gap: 25px;
+  }
+  #addActuForm input, #addActuForm textarea {
+    font-size: 15px;
+  }
 }/*# sourceMappingURL=addactu.css.map */
