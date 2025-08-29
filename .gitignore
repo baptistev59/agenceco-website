@@ -1,0 +1,21 @@
+# IDE / éditeurs
+.vscode/
+
+# Fichiers temporaires du système
+.DS_Store
+Thumbs.db
+
+# Dossiers de build ou cache (cas échéant à l'avenir)
+dist/
+build/
+.cache/
+.tmp/
+
+# Fichiers de log
+*.log
+
+# Sourcemaps générés par les outils (ex. Sass)
+*.css.map
+
+# Cache Sass
+.sass-cache/
