@@ -20,7 +20,7 @@ Ce document recense les axes de veille à suivre pour maintenir le projet front 
 - Suivre les recommandations **W3C**.
 
 ### b) Frameworks & librairies
-- Évolution de **Bootstrap** et **TailwindCSS**.
+- Évolution vers **Bootstrap** et **TailwindCSS**.
 - Nouvelles versions de **Node.js** et gestion des dépendances via **npm**.
 - Alternatives plus légères ou adaptées (ex. Vite.js, Astro).
 
@@ -31,7 +31,6 @@ Ce document recense les axes de veille à suivre pour maintenir le projet front 
 ### d) UX / UI et tendances design
 - Minimalisme, dark mode, micro-interactions.
 - Design responsive & mobile-first.
-- Suivi des tendances Webflow / Dribbble / Behance.
 
 ### e) Outils de développement
 - Extensions VSCode pertinentes (Prettier, ESLint).
