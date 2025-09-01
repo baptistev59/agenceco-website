@@ -5,6 +5,7 @@
 ---
 
 ##  Démo en ligne (https://baptistev59.alwaysdata.net)
+Utilisateur :  email: "john@example.com" password: password123,
 ---
 
 ##  Branche actuelle
