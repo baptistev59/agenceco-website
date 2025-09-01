@@ -1,4 +1,5 @@
-const urlApi = "http://localhost:3000";
+// const urlApi = "http://localhost:3000";
+const urlApi ="https://agencecobackend.vercel.app";
 const urlGetArtById = urlApi + "/articles/";
 
 burger.addEventListener('click', () => {

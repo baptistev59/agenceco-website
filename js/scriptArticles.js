@@ -1,4 +1,5 @@
-const urlApi = "http://localhost:3000";
+// const urlApi = "http://localhost:3000";
+const urlApi ="https://agencecobackend.vercel.app";
 const urlGetListArt = urlApi + "/articles";
 const urlDelArt = urlApi + "/articles/";
 

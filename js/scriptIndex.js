@@ -6,7 +6,8 @@ const slides = document.getElementById('slides');
 const nbSlides = slides.children.length;
 let slide = 0;
 
-const urlApi = "http://localhost:3000";
+const urlApi ="https://agencecobackend.vercel.app";
+// const urlApi = "http://localhost:3000";
 const urlGetListArt = urlApi + "/articles";
 
 const section = document.getElementById('new-list');
