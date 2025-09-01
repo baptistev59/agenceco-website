@@ -4,10 +4,12 @@ const urlBlog = "./blog.html";
 const idArticle = sessionStorage.getItem('idArticle');
 const messSuppr = "Voulez-vous supprimer l'article ?";
 
+// Ouverture du menu burger
 burger.addEventListener('click', () => {
     nav.classList.toggle('nav-closed');
 });
 
+// Gestion de l'affichage des boutons si connecté
 btDeconnect.addEventListener('click', () => {
     localStorage.clear();
 })
@@ -35,7 +37,10 @@ function cacherBtCnx() {
         }
     }
 }
+// Fin Gestion de l'affichage des boutons si connecté
 
+// Gestion de l'a récupération de l'article à modifier ou supprimer
+// Appel à l'API pour récupération de l'article
 async function getArticleById(url, id) {
     url = url + id
     try {
@@ -49,7 +54,24 @@ async function getArticleById(url, id) {
         console.error("Erreur : ", error);
     }
 };
+// Gestion de l'affichage de l'article récupéré
+function displayArticle() {
+    getArticleById(urlGetArticle, idArticle)
+        .then(article => {
+            const titleActu = document.getElementById('titleActu');
+            titleActu.value = article.title;
+            const descriptActu = document.getElementById('descriptActu');
+            descriptActu.value = article.description;
+            const contentActu = document.getElementById('contentActu');
+            contentActu.value = article.content;
+        }
+        )
+}
+displayArticle();
+// Fin Gestion de l'a récupération de l'article à modifier
 
+// Gestion de la suppression de l'article récupéré
+// Appel à l'API pour supprimer l'article à suppr
 async function delArticleById(url, id) {
     url = url + id
     try {
@@ -63,22 +85,32 @@ async function delArticleById(url, id) {
         console.error("Erreur : ", error);
     }
 };
-
-function displayArticle() {
-    getArticleById(urlGetArticle, idArticle)
-        .then(article => {
-            const titleActu = document.getElementById('titleActu');
-            titleActu.value = article.title;
-            const descriptActu = document.getElementById('descriptActu');
-            descriptActu.value = article.description;
-            const contentActu = document.getElementById('contentActu');
-            contentActu.value = article.content;
-        }
-        )
+// Bouton supprimer
+const btDelActu = document.getElementById('delActu');
+// Ecoute du bouton suppr
+btDelActu.addEventListener('click', () => {
+        demConfirmSuppr(messSuppr);
+    })
+function redirect(url) {
+    window.location.href = url;
 }
+// Message de demande de confirmation de suppr de l'article
+function demConfirmSuppr(message) {
+  var confirmation = confirm(message); // Affiche le message de confirmation
 
-displayArticle();
+  if (confirmation) {
+    // L'utilisateur a cliqué sur "OK", on peut procéder à la suppression
+    console.log("L'élément a été supprimé.");
+    delArticleById(urlGetArticle, idArticle),
+    document.location.href = urlBlog;
+  } else {
+    // L'utilisateur a cliqué sur "Annuler", l'action est annulée
+    console.log("Suppression annulée.");
+  }
+}
+// Fin Gestion de la suppression de l'article récupéré
 
+//Gestion de la modification de l'article récupéré
 async function putArticleById(url, article) {
     url = url + article.id;
     try {
@@ -100,14 +132,9 @@ async function putArticleById(url, article) {
 
 
 };
-
+// Bouton modifier
 const btSubmitArticle = document.getElementById('submitActu');
-const btDelActu = document.getElementById('delActu');
-
-btDelActu.addEventListener('click', () => {
-        demConfirmSuppr(messSuppr);
-    })
-
+// Ecoute du bouton modif
 btSubmitArticle.addEventListener('click', () => {
     const idActu = sessionStorage.getItem('idArticle');
     const titleActu = document.getElementById('titleActu').value;
@@ -128,21 +155,4 @@ btSubmitArticle.addEventListener('click', () => {
 
     putArticleById(urlGetArticle, actu);
 })
-
-function redirect(url) {
-    window.location.href = url;
-}
-
-function demConfirmSuppr(message) {
-  var confirmation = confirm(message); // Affiche le message de confirmation
-
-  if (confirmation) {
-    // L'utilisateur a cliqué sur "OK", on peut procéder à la suppression
-    console.log("L'élément a été supprimé.");
-    delArticleById(urlGetArticle, idArticle),
-    document.location.href = urlBlog;
-  } else {
-    // L'utilisateur a cliqué sur "Annuler", l'action est annulée
-    console.log("Suppression annulée.");
-  }
-}
+// Fin Gestion de la modification de l'article récupéré

@@ -10,14 +10,16 @@ const form = document.getElementById('connectForm');
 const submit = document.getElementById('submit');
 const btDeconnect=document.getElementById('btDeconnect');
 
+
+// Ouverture et fermeture du menu Burger
 burger.addEventListener('click', () => {
     nav.classList.toggle('nav-closed');
 });
-btDeconnect.addEventListener('click', () => {
-    localStorage.clear();
-})
+
+
 cacherForm();
 
+// Submit du formaulaire de connexion
 submit.addEventListener('click', function () {
 
     const email = document.getElementById('ident').value;
@@ -33,6 +35,7 @@ submit.addEventListener('click', function () {
     getToken(login);
 })
 
+// Requête à l'API pour la connexion
 async function getToken(login) {
     fetch(urlGetToken, {
         method: 'POST',
@@ -56,6 +59,7 @@ async function getToken(login) {
         })
 };
 
+// Affichage message d'erreur à la connexion
 function displayErreur(error) {
     console.log("fonction displayErreur");
     const message = document.getElementById('message');
@@ -71,6 +75,7 @@ function displayErreur(error) {
     message.appendChild(div);
 }
 
+// Suppression du message d'erreur
 function supprErreur() {
     console.log("fonction supprErreur");
     const message = document.getElementById('message');
@@ -79,6 +84,7 @@ function supprErreur() {
     }
 }
 
+// Redirection vers les actualités
 function redirect(url) {
     if (localStorage.getItem('token')) {
         window.location.href = url;
@@ -88,6 +94,7 @@ function redirect(url) {
     
 }
 
+// Gestion de l'affichage du formulaire de connexion
 function cacherForm(){
     console.log("fonction cacherForm !");
     
@@ -104,6 +111,8 @@ function cacherForm(){
     }
 }
 
+
+// Gestion d'afficher les boutons à la connection
 cacherBtCnx();
 
 function cacherBtCnx() {
@@ -127,3 +136,9 @@ function cacherBtCnx() {
         }
     }
 }
+// Bouton déconnection
+btDeconnect.addEventListener('click', () => {
+    localStorage.clear();
+})
+
+// Fin Gestion d'afficher les boutons à la connection

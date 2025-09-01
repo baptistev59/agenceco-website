@@ -14,15 +14,19 @@ const messSuppr = "Voulez-vous supprimer l'article ?";
 const section = document.getElementById('new-list');
 const div = document.getElementById('articles');
 
+// Ouverture et fermeture du menu Burger
 burger.addEventListener('click', () => {
     nav.classList.toggle('nav-closed');
 });
 
+// Gestion de l'affichage de la liste des articles
+// Gestion de l'appel à l'API pour la récup des articles
 async function getListArt(url) {
     const response = await fetch(url, { method: 'GET' });
     return response.json();
 };
 
+// Gestion de la response de l'appel à l'API
 getListArt(urlGetListArt)
     .then(articles => {
         console.log(articles);
@@ -40,7 +44,7 @@ getListArt(urlGetListArt)
 function classer(a, b) {
     return (a.publicationDate < b.publicationDate) ? 1 : -1;
 }
-
+// Affichage de l'erreur
 function displayErreur(error) {
     console.log("fonction displayErreur");
     const articles = document.getElementById('articles');
@@ -57,7 +61,7 @@ function displayErreur(error) {
     div.appendChild(h3);
     articles.appendChild(div);
 }
-
+// Affichage de la liste des articles
 function displayArticle(article) {
     console.log("fonction displayArticle");
 
@@ -124,7 +128,7 @@ function displayArticle(article) {
 
     })
 }
-
+// Construction de l'URL pour le détail de l'article
 function constUrlDetail(article) {
     const url = new URL(window.location.origin);
     url.origin = window.location.origin;
@@ -133,14 +137,15 @@ function constUrlDetail(article) {
     console.log("New URL détail : ", url.href);
     return url.href;
 }
-
-
+// tri des articles par date
 function triDateFrAsc(a, b) {
     let dateA = new Date(a.date.split("/").reverse().join('-'));
     let dateB = new Date(b.date.split("/").reverse().join('-'));
     return (dateA > dateB) ? 1 : -1;
 }
+// Fin Gestion de l'affichage de la liste des articles
 
+// Affichage des bouton si connecter
 cacherBtCnx();
 
 function cacherBtCnx() {
@@ -164,14 +169,16 @@ function cacherBtCnx() {
         }
     }
 }
+// Fin Affichage des bouton si connecter
 
 btDeconnect.addEventListener('click', () => {
     localStorage.clear();
 })
 
+// Gestion de l'ajout d'une actualité
+// Bouton d'Ajout d'une actu
 const btAjoutActu = document.getElementById('btAjoutActu');
-
-
+// Ecoute du bouton d'ajout
 btAjoutActu.addEventListener('click', () => {
     if (localStorage.getItem('token')) {
         document.location.href = urlAddActu;
@@ -179,7 +186,10 @@ btAjoutActu.addEventListener('click', () => {
         document.location.href = urlLogin;
     }
 })
+// Fin Gestion de l'ajout d'une actualité
 
+// Gestion de la suppression d'article
+// appel  à l'API pour la suppr de l'article
 async function delArticleById(url, id) {
     url = url + id
     try {
@@ -193,7 +203,7 @@ async function delArticleById(url, id) {
         console.error("Erreur : ", error);
     }
 };
-
+// Message de demande de confimation de suppr
 function demConfirmSuppr(message, idArticle) {
     var confirmation = confirm(message); // Affiche le message de confirmation
     if (confirmation) {
@@ -206,3 +216,4 @@ function demConfirmSuppr(message, idArticle) {
         console.log("Suppression annulée.");
     }
 }
+// Fin Gestion de la suppression d'article

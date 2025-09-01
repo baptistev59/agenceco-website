@@ -3,10 +3,12 @@ const urlApi = "http://localhost:3000";
 const urlAddArticle = urlApi + "/articles";
 const urlBlog = "./blog.html";
 
+// Ouverture du menu Burger
 burger.addEventListener('click', () => {
     nav.classList.toggle('nav-closed');
 });
 
+// Gestion de l'affichage des boutons si connecter
 btDeconnect.addEventListener('click', () => {
     localStorage.clear();
 })
@@ -34,7 +36,10 @@ function cacherBtCnx() {
         }
     }
 }
+// Fin Gestion de l'affichage des bouton si connecter
 
+// Gestion de l'ajout d'un article
+// Appel à l'API pour l'ajout d'un article
 async function postAddArticle(url, article) {
     try {
         const response = await fetch(url, {
@@ -51,15 +56,11 @@ async function postAddArticle(url, article) {
         return resultat;
     } catch (error) {
         console.error("Erreur : ", error);
-
     }
-
-    
 };
-
+// Bouton de soumission de l'ajout d'un article
 const btSubmitArticle = document.getElementById('submitActu');
-
-
+// Ecoute du bouton d'ajout d'un article
 btSubmitArticle.addEventListener('click', () => {
     const titleActu = document.getElementById('titleActu').value;
     const descriptActu = document.getElementById('descriptActu').value;
@@ -78,7 +79,8 @@ btSubmitArticle.addEventListener('click', () => {
 
     postAddArticle(urlAddArticle, actu);
 })
-
+// Redirection après l'ajout d'un article
 function redirect(url) {
-        window.location.href = url;   
+    window.location.href = url;
 }
+// Fin Gestion de l'ajout d'un article

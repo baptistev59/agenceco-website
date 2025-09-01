@@ -6,13 +6,21 @@ const slides = document.getElementById('slides');
 const nbSlides = slides.children.length;
 let slide = 0;
 
-const urlDetail = "/detailActu.html"
+const urlApi = "http://localhost:3000";
+const urlGetListArt = urlApi + "/articles";
 
+const section = document.getElementById('new-list');
+const div = document.getElementById('articles');
 
+const urlDetail = "/detailactu.html"
+
+// Ouverture et fermeture du menu Burger
 burger.addEventListener('click', () => {
     nav.classList.toggle('nav-closed');
 });
 
+// Gestion du slider
+// Click précédent
 prev.addEventListener('click', () => {
     console.log("gauche");
     slide = slide - 1;
@@ -21,7 +29,7 @@ prev.addEventListener('click', () => {
     }
     changerSlide();
 })
-
+// Click suivant
 next.addEventListener('click', () => {
     console.log("droite");
     slide = slide + 1;
@@ -30,11 +38,11 @@ next.addEventListener('click', () => {
     }
     changerSlide();
 })
-
+// Slide des images
 function changerSlide(params) {
     slides.style.transform = 'translateX(-' + (slide * 100) + '%)';
 }
-
+// Gestion intervale entre chaque image
 setInterval(() => {
     slide = slide + 1;
     if (slide >= nbSlides) {
@@ -43,14 +51,10 @@ setInterval(() => {
     changerSlide();
 }
     , 3000);
+//Fin Gestion du slider
 
-
-const urlApi = "http://localhost:3000";
-const urlGetListArt = urlApi + "/articles";
-
-const section = document.getElementById('new-list');
-const div = document.getElementById('articles');
-
+//  Gestion des articles
+// Appel API liste des articles
 async function getListArt() {
     fetch(urlGetListArt)
         .then(response => response.json())
@@ -69,10 +73,12 @@ async function getListArt() {
         })
 };
 
+// Tri des articles
 function classer(a, b) {
     return (a.publicationDate < b.publicationDate) ? 1 : -1;
 }
 
+// Affichage des articles
 function displayArticleAccueil(article) {
     const artAccueil = document.getElementById('artAccueil');
 
@@ -106,6 +112,7 @@ function displayArticleAccueil(article) {
     })
 }
 
+// Construction de l'URL du détail des articles
 function constUrlDetail(article) {
     const url = new URL(window.location.origin);
     url.origin = window.location.origin;
@@ -116,7 +123,9 @@ function constUrlDetail(article) {
 }
 
 getListArt();
+//Fin gestion liste des articles
 
+// Gestion d'afficher les boutons à la connection
 cacherBtCnx();
 
 function cacherBtCnx() {
@@ -140,7 +149,8 @@ function cacherBtCnx() {
         }
     }
 }
-
+// Bouton déconnection
 btDeconnect.addEventListener('click', () => {
     localStorage.clear();
 })
+// Fin Gestion d'afficher les boutons à la connection
