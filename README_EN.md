@@ -1,4 +1,3 @@
-Parfait ! Merci pour le contenu. Voici la **traduction complète en anglais** de ton `README.md` pour la branche `sass`, que je vais ensuite intégrer dans le document Word.
 # agenceco-website (sass branch)
 
 **Static training website** — A showcase website built with HTML, CSS, and JavaScript, using Sass (a CSS preprocessor) for style management.
@@ -28,8 +27,8 @@ This README refers to the **`sass`** branch, which includes a version of the pro
 ├── detailactu.html      # News post details
 ├── modifactu.html       # Edit a news post
 ├── assets/
-│   ├── js/              # JavaScript scripts
-│   └── sass/            # Sass source files
+├── js/                  # JavaScript scripts
+├── sass/                # Sass source files
 └── README.md            # Documentation (this file)
 ```
 
