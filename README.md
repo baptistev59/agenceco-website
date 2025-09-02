@@ -5,7 +5,7 @@
 ---
 
 ##  Démo en ligne (https://baptistev59.alwaysdata.net)
-Utilisateur :  email: "john@example.com" password: password123,
+Utilisateur :  email: "john@example.com" password: "password123"
 ---
 
 ##  Branche actuelle
@@ -46,7 +46,6 @@ Ce README correspond à la **branche `sass`**, qui inclut une version du projet 
 ##  Installation & usage
 
 1. Cloner le dépôt et basculer sur la branche `sass` :
-   ```bash
    git clone https://github.com/baptistev59/agenceco-website.git
    cd agenceco-website
    git checkout sass
@@ -80,6 +79,7 @@ Le projet utilise une API dédiée, disponible dans un dépôt séparé :
 👉 [AgencEcoBackend](https://github.com/gducampus/AgencEcoBackend)
 
 Toutes les instructions d’installation et d’exécution du backend sont détaillées directement dans le README de ce dépôt.
+Pour la version de démo en ligne, l'API' est déployée sur Vercel à l'adresse "https://agencecobackend.vercel.app/".
 
 ##  Contributions
 
